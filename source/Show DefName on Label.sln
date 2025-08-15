@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36327.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Show DefName on Label", "Show DefName on Label.csproj", "{DF41D301-5FC7-4B79-867F-C8C5084D173D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF41D301-5FC7-4B79-867F-C8C5084D173D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF41D301-5FC7-4B79-867F-C8C5084D173D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF41D301-5FC7-4B79-867F-C8C5084D173D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF41D301-5FC7-4B79-867F-C8C5084D173D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E5B73DC-BD03-4243-AE39-32DED480F232}
+	EndGlobalSection
+EndGlobal
