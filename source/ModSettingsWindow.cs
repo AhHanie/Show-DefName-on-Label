@@ -1,4 +1,5 @@
 ﻿using LessUI;
+using RimWorld;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using Verse;
@@ -26,7 +27,23 @@ namespace SK_Show_DefName_on_Label
 
             canvas.AddChild(grid);
 
+            bool oldValue = ModSettings.ModEnabled;
+
             canvas.Render();
+
+            if (oldValue != ModSettings.ModEnabled)
+            {
+                if (oldValue)
+                {
+                    Mod.RevertAllDefNamesFromLabels();
+                }
+                else
+                {
+                    Mod.ApplyAllDefNamesToLabels();
+                }
+                GenLabel.ClearCache();
+                InspectPaneUtility.Reset();
+            }
         }
     }
 }
