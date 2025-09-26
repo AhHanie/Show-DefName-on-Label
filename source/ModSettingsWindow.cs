@@ -12,17 +12,14 @@ namespace SK_Show_DefName_on_Label
         public static void Draw(Rect parent)
         {
             ScrollCanvas canvas = new ScrollCanvas(rect: parent, scrollPositionBox: scrollPosition);
-            Grid grid = new Grid(2, 2, widthMode: SizeMode.Fill, heightMode: SizeMode.Content, padding: 5f);
+            Grid grid = new Grid(2, 1, widthMode: SizeMode.Fill, heightMode: SizeMode.Content, padding: 5f);
             Text.Font = GameFont.Small;
 
-            Label modEnabledLabel = new Label(text: "ShowDefName.Settings.ModEnabled.Label".Translate(), alignment: Align.MiddleLeft);
-            Label modEnabledInfoLabel = new Label(text: "ShowDefName.Settings.ModEnabled.Info.Label".Translate(), alignment: Align.MiddleLeft);
+            Label modEnabledLabel = new Label(text: "ShowDefName.Settings.ModEnabled.Label".Translate(), alignment: Align.MiddleLeft, tooltip: "ShowDefName.Settings.ModEnabled.Label.Tooltip".Translate());
 
             Checkbox modEnabledCheckbox = new Checkbox(isChecked: ModSettings.modEnabled, alignment: Align.MiddleLeft);
 
-            grid.AddChild(modEnabledInfoLabel)
-                .AddChild(new Empty())
-                .AddChild(modEnabledLabel)
+            grid.AddChild(modEnabledLabel)
                 .AddChild(modEnabledCheckbox);
 
             canvas.AddChild(grid);
