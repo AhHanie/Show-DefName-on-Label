@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace SK_Show_DefName_on_Label
@@ -20,9 +21,24 @@ namespace SK_Show_DefName_on_Label
         {
             LongEventHandler.QueueLongEvent(Init, "Sk.Show_DefName_on_Label.Init", doAsynchronously: true, null);
         }
+        public override string SettingsCategory()
+        {
+            return "Show DefName on Label";
+        }
+
+        public override void DoSettingsWindowContents(Rect rect)
+        {
+            ModSettingsWindow.Draw(rect);
+            base.DoSettingsWindowContents(rect);
+        }
 
         public void Init()
         {
+            GetSettings<ModSettings>();
+            if (!ModSettings.ModEnabled)
+            {
+                return;
+            }
             Traverse<AbilityDef>();
             Traverse<BiomeDef>();
             Traverse<NeedDef>();

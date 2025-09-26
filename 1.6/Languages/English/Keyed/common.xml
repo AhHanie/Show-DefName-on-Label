@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <ShowDefName.Settings.ModEnabled.Label>Mod Enabled</ShowDefName.Settings.ModEnabled.Label>
+    <ShowDefName.Settings.ModEnabled.Info.Label>Changing the setting requires a game restart</ShowDefName.Settings.ModEnabled.Info.Label>
+</LanguageData>
