@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Runtime;
 using UnityEngine;
 using Verse;
 
@@ -130,6 +131,7 @@ namespace SK_Show_DefName_on_Label
 
         public void Init()
         {
+            GetSettings<ModSettings>();
             if (ModSettings.ModEnabled)
             {
                 ApplyAllDefNamesToLabels();
