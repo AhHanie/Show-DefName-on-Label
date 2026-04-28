@@ -2,4 +2,5 @@
 <LanguageData>
     <ShowDefName.Settings.ModEnabled.Label>Mod Enabled</ShowDefName.Settings.ModEnabled.Label>
     <ShowDefName.Settings.ModEnabled.Label.Tooltip>Doesn't require a game restart</ShowDefName.Settings.ModEnabled.Label.Tooltip>
+    <ShowDefName.PlaySettings.ToggleDefLabels>Toggle DefName labels</ShowDefName.PlaySettings.ToggleDefLabels>
 </LanguageData>

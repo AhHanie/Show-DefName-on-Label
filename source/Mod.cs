@@ -1,5 +1,5 @@
-﻿using RimWorld;
-using System.Runtime;
+using HarmonyLib;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -7,6 +7,8 @@ namespace SK_Show_DefName_on_Label
 {
     public class Mod : Verse.Mod
     {
+        public static Mod Instance;
+
         public static void ApplyDefNamesToLabels<T>() where T : Def
         {
             foreach (T allDef in DefDatabase<T>.AllDefs)
@@ -123,9 +125,37 @@ namespace SK_Show_DefName_on_Label
             }
         }
 
+        public static void SetDefLabelsEnabled(bool enabled, bool writeSettings = false)
+        {
+            if (ModSettings.ModEnabled == enabled)
+            {
+                return;
+            }
+
+            if (enabled)
+            {
+                ApplyAllDefNamesToLabels();
+            }
+            else
+            {
+                RevertAllDefNamesFromLabels();
+            }
+
+            ModSettings.ModEnabled = enabled;
+            GenLabel.ClearCache();
+            InspectPaneUtility.Reset();
+
+            if (writeSettings)
+            {
+                Instance?.GetSettings<ModSettings>().Write();
+            }
+        }
+
         public Mod(ModContentPack content)
             : base(content)
         {
+            Instance = this;
+            new Harmony("sk.showdefnameonlabel").PatchAll();
             LongEventHandler.QueueLongEvent(Init, "Sk.Show_DefName_on_Label.Init", doAsynchronously: true, null);
         }
 
