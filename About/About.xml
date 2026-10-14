@@ -5,6 +5,7 @@
 	<supportedVersions>
 		<li>1.5</li>
 		<li>1.6</li>
+		<li>1.7</li>
 	</supportedVersions>
 	<url>https://github.com/AhHanie/Show-DefName-on-Label</url>
 	<packageId>sk.showdefname</packageId>
@@ -20,5 +21,5 @@
 		<li>brrainz.harmony</li>
 	</loadAfter>
 	<description>Show defName on label</description>
-	<modVersion>1.3.0</modVersion>
+	<modVersion>1.4.0</modVersion>
 </ModMetaData>
